@@ -41,5 +41,6 @@ public class StoppingState extends LiftState
     public void stop()
     {
         System.out.println("电梯停止");
+        context.stateString = "停止状态";
     }
 }

@@ -32,6 +32,7 @@ public class RunningState extends LiftState
     public void run()
     {
         System.out.println("电梯运行");
+        context.stateString = "运行状态";
     }
 
     @Override

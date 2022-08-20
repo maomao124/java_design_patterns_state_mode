@@ -21,6 +21,8 @@ public class Context
     public final static RunningState runningState;
     public final static StoppingState stoppingState;
 
+    public String stateString = "未知状态";
+
     static
     {
         openningState = new OpenningState();//开门状态，这时候电梯只能关闭

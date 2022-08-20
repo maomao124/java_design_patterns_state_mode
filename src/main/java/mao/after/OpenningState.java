@@ -20,6 +20,7 @@ public class OpenningState extends LiftState
     public void open()
     {
         System.out.println("电梯门打开");
+        context.stateString = "打开状态";
     }
 
     @Override

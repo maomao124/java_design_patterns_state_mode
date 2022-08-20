@@ -27,6 +27,7 @@ public class ClosingState extends LiftState
     public void close()
     {
         System.out.println("电梯门关闭");
+        context.stateString = "关闭状态";
     }
 
     @Override
