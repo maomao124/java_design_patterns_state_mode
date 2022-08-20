@@ -20,21 +20,22 @@ public class ClosingState extends LiftState
     public void open()
     {
         context.setLiftState(Context.openningState);
-        context.getLiftState().open();
+        System.out.println("电梯门打开");
+        context.stateString = "打开状态";
     }
 
     @Override
     public void close()
     {
-        System.out.println("电梯门关闭");
-        context.stateString = "关闭状态";
+
     }
 
     @Override
     public void run()
     {
         context.setLiftState(Context.runningState);
-        context.getLiftState().run();
+        System.out.println("电梯运行");
+        context.stateString = "运行状态";
     }
 
     @Override

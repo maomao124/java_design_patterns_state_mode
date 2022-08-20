@@ -31,14 +31,14 @@ public class RunningState extends LiftState
     @Override
     public void run()
     {
-        System.out.println("电梯运行");
-        context.stateString = "运行状态";
+
     }
 
     @Override
     public void stop()
     {
         context.setLiftState(Context.stoppingState);
-        context.getLiftState().stop();
+        System.out.println("电梯停止");
+        context.stateString = "停止状态";
     }
 }
