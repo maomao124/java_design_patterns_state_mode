@@ -33,7 +33,7 @@ public class Lift implements ILift
      * @param state 状态数字
      * @return 字符串
      */
-    private String getStateString(int state)
+    public String getStateString(int state)
     {
         if (state == OPENING_STATE)
         {
