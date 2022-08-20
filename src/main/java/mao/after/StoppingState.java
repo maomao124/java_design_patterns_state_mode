@@ -19,24 +19,27 @@ public class StoppingState extends LiftState
     @Override
     public void open()
     {
-
+        context.setLiftState(Context.openningState);
+        context.getLiftState().open();
     }
 
     @Override
     public void close()
     {
-
+        context.setLiftState(Context.closingState);
+        context.getLiftState().close();
     }
 
     @Override
     public void run()
     {
-
+        context.setLiftState(Context.runningState);
+        context.getLiftState().run();
     }
 
     @Override
     public void stop()
     {
-
+        System.out.println("电梯停止");
     }
 }
