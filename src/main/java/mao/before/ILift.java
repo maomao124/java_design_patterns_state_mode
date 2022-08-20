@@ -31,6 +31,11 @@ public interface ILift
      */
     void setState(int state);
 
+    /**
+     * 获取状态
+     *
+     * @return 状态数字
+     */
     int getState();
 
     /**
