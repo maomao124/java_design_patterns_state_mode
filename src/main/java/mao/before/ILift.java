@@ -31,6 +31,16 @@ public interface ILift
      */
     void setState(int state);
 
+    int getState();
+
+    /**
+     * 获得对应的状态字符串
+     *
+     * @param state 状态数字
+     * @return 字符串
+     */
+    String getStateString(int state);
+
     /**
      * 开门
      */

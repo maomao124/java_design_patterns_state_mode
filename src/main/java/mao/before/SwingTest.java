@@ -2,6 +2,8 @@ package mao.before;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -26,7 +28,7 @@ public class SwingTest
     private JButton runButton;
     private JButton stopButton;
 
-    private TextField state;
+    private JTextField state;
 
     private ILift lift;
 
@@ -74,7 +76,45 @@ public class SwingTest
      */
     private void setButtonListener()
     {
+        openButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                lift.open();
+                state.setText(lift.getStateString(lift.getState()));
+            }
+        });
 
+        closeButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                lift.close();
+                state.setText(lift.getStateString(lift.getState()));
+            }
+        });
+
+        runButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                lift.run();
+                state.setText(lift.getStateString(lift.getState()));
+            }
+        });
+
+        stopButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                lift.stop();
+                state.setText(lift.getStateString(lift.getState()));
+            }
+        });
     }
 
     /**
@@ -109,6 +149,12 @@ public class SwingTest
         closeButton.setBackground(new Color(20, 50, 130));
         runButton.setBackground(new Color(20, 50, 130));
         stopButton.setBackground(new Color(20, 50, 130));
+
+        state.setFont(font);
+        state.setForeground(Color.cyan);
+        state.setBackground(new Color(20, 30, 100));
+        state.setHorizontalAlignment(JTextField.CENTER);
+        state.setEditable(false);
     }
 
     /**
@@ -150,7 +196,7 @@ public class SwingTest
         closeButton = new JButton("关闭电梯门");
         runButton = new JButton("运行");
         stopButton = new JButton("停止");
-        state = new TextField("停止状态");
+        state = new JTextField("停止状态");
     }
 
     /**
@@ -189,5 +235,11 @@ public class SwingTest
                 System.out.println("程序退出");
             }
         }));
+    }
+
+
+    public static void main(String[] args)
+    {
+        new SwingTest();
     }
 }

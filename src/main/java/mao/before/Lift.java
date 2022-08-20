@@ -27,12 +27,19 @@ public class Lift implements ILift
         System.out.println("电梯由" + beforeState + "更改为" + afterState);
     }
 
+    @Override
+    public int getState()
+    {
+        return state;
+    }
+
     /**
      * 获得对应的状态字符串
      *
      * @param state 状态数字
      * @return 字符串
      */
+    @Override
     public String getStateString(int state)
     {
         if (state == OPENING_STATE)
